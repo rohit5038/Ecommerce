@@ -1,0 +1,11 @@
+.anchor{
+    text-decoration: none;
+}
+
+.none{
+    filter: grayscale(50%);
+}
+
+.none:hover{
+    filter: grayscale(0%);
+}

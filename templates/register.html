@@ -1,0 +1,45 @@
+{% extends 'sign_in.html'%}
+
+{% block 'main' %}
+
+{% load static %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 shadow mt-4 p-4 mx-auto">
+            <h2>Registration</h2>
+            {% if errmsg %}
+            <div class="alert alert-danger">
+                {{errmsg}}
+            </div>
+            {% endif %}
+            <form method="post" action="">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <div class="mb-3">
+                        <label for="Input1" class="form-label">Username:</label>
+                        <input type="email" class="form-control" id="Input1" name="uname" placeholder="Enter Username">
+                    </div>
+                    <div class="mb-3">
+                        <label for="Input2" class="form-label">Password:</label>
+                        <input type="password" class="form-control" id="Input2" name="upass" placeholder="Enter Password">
+                    </div>
+                    <div class="mb-3">
+                        <label for="Input2" class="form-label">Confirm Password:</label>
+                        <input type="password" class="form-control" id="Input2" name="ucpass" placeholder=" Re Enter Password">
+                    </div>
+                </div>
+                <input type="submit" class="btn btn-danger" value="Register"> Already a User? <a href="/login" style="text-decoration: none;">Login</a>
+                {% if success %}
+
+                <div class="alert alert-danger">
+                {{success}}
+                </div>
+
+                {% endif %}
+            </form>
+        </div>
+    </div>
+</div>
+<script src="{% static 'asset/js/bootstrap.min.js' %}"></script>
+{% endblock 'main' %}
